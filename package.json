@@ -1,16 +1,16 @@
 {
   "name": "hubot-velib",
-  "description": "A hubot script that does the things",
+  "description": "A hubot script to search for velibs bikes in Paris",
   "version": "0.0.0",
   "author": "cristianpb <felipebrokate@gmail.com>",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts",
   "repository": {
     "type": "git",
-    "url": "git://github.com/hubot-scripts/hubot-velib.git"
+    "url": "git://github.com/cristianpb/hubot-velib.git"
   },
   "bugs": {
-    "url": "https://github.com/hubot-scripts/hubot-velib/issues"
+    "url": "https://github.com/cristianpb/hubot-velib/issues"
   },
   "dependencies": {},
   "peerDependencies": {
