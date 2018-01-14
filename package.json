@@ -2,7 +2,7 @@
   "name": "hubot-velib",
   "description": "A hubot script to search for velibs bikes in Paris",
   "version": "0.0.0",
-  "author": "cristianpb <felipebrokate@gmail.com>",
+  "author": "cristianpb",
   "license": "MIT",
   "keywords": "hubot, hubot-scripts",
   "repository": {
