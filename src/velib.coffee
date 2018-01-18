@@ -11,11 +11,8 @@
 #   cristianpb
 
 module.exports = (robot) ->
-  robot.respond /hello/, (res) ->
-    res.reply "hello!"
 
-  robot.hear /orly/, (res) ->
-    res.send "yarly"
+  # Get velibs in a near place
 
   robot.respond /((velibs) )?in (.+)/i, (msg) ->
     mode        = msg.match[2]
@@ -26,7 +23,6 @@ module.exports = (robot) ->
     query       =
       address:     place
       key:         key
-
 
     robot.http(url).query(query).get()((err, res, body) ->
       jsonBody = JSON.parse(body)
@@ -39,11 +35,6 @@ module.exports = (robot) ->
       arr = [lat, lng, 500].join("%2C")
       sub_url += "&geofilter.distance=" + arr
 
-      #sub_query       =
-      #  dataset:     velib-disponibilite-en-temps-reel
-      #  geofilter:
-      #    distance :  arr
-
       robot.http(sub_url).get()((err, res, body) ->
         jsonBody = JSON.parse(body)
         nhits = jsonBody.nhits
@@ -53,7 +44,6 @@ module.exports = (robot) ->
         records = jsonBody.records
         names = records.map (item) -> item.fields.name + ': ' + item.fields.numbikesavailable + ' over ' + item.fields.capacity
         capacity_str = names.join('\n')
-        
 
         msg.send "There are #{nhits} stations: \n#{capacity_str}"
       )
